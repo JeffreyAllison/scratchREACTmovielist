@@ -13,9 +13,9 @@ export default function Movie({
       onClick={() => handleDeleteMovie && handleDeleteMovie(movieFormTitle)}
       style={{ background: movieFormColor }}
     >
-      <h3>{movieFormTitle}Title:</h3>
-      <p>{movieFormDirector}Directed by:</p>
-      <p>{movieFormYearReleased}Release year:</p>
+      <h3>Title: {movieFormTitle}</h3>
+      <p>Directed by: {movieFormDirector}</p>
+      <p>Release year: {movieFormYearReleased}</p>
     </div>
   );
 }

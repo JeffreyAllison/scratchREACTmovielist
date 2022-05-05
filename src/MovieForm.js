@@ -45,9 +45,9 @@ export default function MovieForm({
             value={movieFormColor}
             onChange={(e) => setMovieFormColor(e.target.value)}
           >
-            <option value="lightgreen">Green</option>
-            <option value="lightblue">Blue</option>
-            <option value="pink">Pink</option>
+            <option value="limegreen">Green</option>
+            <option value="cyan">Blue</option>
+            <option value="magenta">Pink</option>
             <option value="purple">Purple</option>
             <option value="orange">Orange</option>
           </select>
