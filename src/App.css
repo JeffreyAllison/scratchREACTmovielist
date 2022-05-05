@@ -21,7 +21,7 @@ body {
   padding: 50px;
 }
 
-/.movie-form label,
+.movie-form label,
 .movie-form input {
   display: block;
 }
