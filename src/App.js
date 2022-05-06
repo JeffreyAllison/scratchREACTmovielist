@@ -56,7 +56,7 @@ function App() {
         />
       </div>
       <div className="movie-filter quarter">
-        Filter Movies by Title
+        Filter Movies by Title:
         <input onChange={(e) => setFilterQuery(e.target.value)} />
       </div>
       <MovieForm
