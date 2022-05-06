@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="current-movie quarter">
+      <div className="current-movie">
         <Movie
           movieFormTitle={movieFormTitle}
           movieFormYearReleased={movieFormYearReleased}
@@ -55,7 +55,7 @@ function App() {
           movieFormColor={movieFormColor}
         />
       </div>
-      <div className="movie-filter quarter">
+      <div className="movie-filter">
         Filter Movies by Title:
         <input onChange={(e) => setFilterQuery(e.target.value)} />
       </div>
