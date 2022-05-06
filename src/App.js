@@ -31,10 +31,18 @@ function App() {
     setMovieFormColor('magenta');
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => handleFilterMovies(filterQuery), [filterQuery]);
+
   function handleDeleteMovie(movieFormTitle) {
     const movieIndex = allMovies.findIndex((movie) => movie.movieFormTitle === movieFormTitle);
     allMovies.splice(movieIndex, 1);
     setAllMovies([...allMovies]);
+  }
+
+  function handleFilterMovies(search) {
+    const searchMovies = allMovies.filter((movie) => movie.movieFormTitle.includes(search));
+    search ? setFilteredMovies(searchMovies) : setAllMovies(allMovies);
   }
 
   return (
@@ -47,7 +55,10 @@ function App() {
           movieFormColor={movieFormColor}
         />
       </div>
-      <div className="movie-filter quarter">Filter movies</div>
+      <div className="movie-filter quarter">
+        Filter Movies
+        <input onChange={(e) => setFilterQuery(e.target.value)} />
+      </div>
       <MovieForm
         submitMovie={submitMovie}
         movieFormTitle={movieFormTitle}
@@ -59,7 +70,10 @@ function App() {
         movieFormColor={movieFormColor}
         setMovieFormColor={setMovieFormColor}
       />
-      <MovieList movies={allMovies} handleDeleteMovie={handleDeleteMovie} />
+      <MovieList
+        movies={filterQuery ? filteredMovies : allMovies}
+        handleDeleteMovie={handleDeleteMovie}
+      />
     </div>
   );
 }

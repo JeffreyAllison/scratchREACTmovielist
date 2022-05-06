@@ -15,7 +15,7 @@ export default function MovieForm({
     <div className="movie-form-container quarter">
       <form onSubmit={submitMovie} className="movie-form">
         <label>
-          Title
+          Movie Title:
           <input
             required
             value={movieFormTitle}
@@ -23,7 +23,7 @@ export default function MovieForm({
           />
         </label>
         <label>
-          Year Released
+          Year Released:
           <input
             required
             value={movieFormYearReleased}
@@ -31,7 +31,7 @@ export default function MovieForm({
           />
         </label>
         <label>
-          Director
+          Director:
           <input
             required
             value={movieFormDirector}
@@ -39,7 +39,7 @@ export default function MovieForm({
           />
         </label>
         <label>
-          Poster Color
+          Poster Color:<br></br>
           <select
             required
             value={movieFormColor}
@@ -48,11 +48,14 @@ export default function MovieForm({
             <option value="limegreen">Green</option>
             <option value="cyan">Blue</option>
             <option value="magenta">Pink</option>
-            <option value="purple">Purple</option>
-            <option value="orange">Orange</option>
+            <option value="gold">Yellow</option>
+            <option value="orangered">Orange</option>
           </select>
         </label>
-        <button>Add Movie to List</button>
+        <br></br>
+        <button>
+          <i>Add Movie to List</i>
+        </button>
       </form>
     </div>
   );
