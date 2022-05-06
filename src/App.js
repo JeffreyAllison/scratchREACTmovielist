@@ -31,16 +31,20 @@ function App() {
     setMovieFormColor('magenta');
   }
 
+  function handleDeleteMovie(movieFormTitle) {
+    const movieIndex = allMovies.findIndex((movie) => movie.movieFormTitle === movieFormTitle);
+    allMovies.splice(movieIndex, 1);
+    setAllMovies([...allMovies]);
+  }
+
   return (
     <div className="App">
       <div className="current-movie quarter">
         <Movie
-          movie={{
-            movieFormTitle: movieFormTitle,
-            movieFormYearReleased: movieFormYearReleased,
-            movieFormDirector: movieFormDirector,
-            movieFormColor: movieFormColor,
-          }}
+          movieFormTitle={movieFormTitle}
+          movieFormYearReleased={movieFormYearReleased}
+          movieFormDirector={movieFormDirector}
+          movieFormColor={movieFormColor}
         />
       </div>
       <div className="movie-filter quarter">Filter movies</div>
@@ -55,7 +59,7 @@ function App() {
         movieFormColor={movieFormColor}
         setMovieFormColor={setMovieFormColor}
       />
-      <MovieList movies={allMovies} />
+      <MovieList movies={allMovies} handleDeleteMovie={handleDeleteMovie} />
     </div>
   );
 }
